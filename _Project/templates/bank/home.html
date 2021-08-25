@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block title %}Bank{% endblock %} {% block content
+%}
+
+<div class="card w-50" style="">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+
+    {% if bool == False %}
+    <h5 class="card-title">Create New Bank Account</h5>
+    <p class="card-text">
+      Get started creating a new bank account
+    </p>
+    {% else %}
+    <h5 class="card-title">View Account</h5>
+    <p class="card-text">
+      View a previously created account
+    </p>
+    {% endif %}
+    {% if bool == False %}
+    <a href="index" class="btn btn-dark">Create Account</a>
+    {% else %}
+    <a href="account" class="btn btn-dark">View Account</a>
+    {% endif %}
+
+  </div>
+</div>
+<hr class="solid"  style="">
+{% if bool == True %}
+<div class="card w-50" style=" ">
+  <img
+    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body" style="">
+    <h5 class="card-title">Add/Widthdraw</h5>
+    <p class="card-text">
+      Add or widthdraw money from your account
+    </p>
+    <div class="dropdown">
+        <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenu2"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+  >     Dropdown
+        </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><button class="dropdown-item" type="button">Add Money</button></li>
+    <li>
+      <button class="dropdown-item" type="button">Withdraw Money</button>
+    </li>
+
+    </ul>
+    </div>
+
+
+{{ query }}
+  </div>
+</div>
+{% else %}
+{% endif %}
+
+{% endblock %}

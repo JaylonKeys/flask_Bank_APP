@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<style>
+    .container{
+
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+
+
+    }
+
+    #three{
+
+
+
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+
+
+
+
+
+}
+
+#two{
+
+
+    min-height: 100%;
+
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+
+
+
+
+
+}
+
+</style>
+
+
+
+    <div class="container">
+      <div  class="card w-25" id="two" style=" flex-grow: 1;">
+          <div class="" style="">
+              <img
+                  src="static/view.jpg"
+                  class="card-img"
+                  style=" height: 100%"
+
+              />
+
+
+
+
+
+          </div>
+
+          <div class="card-body" style="  display: flex; flex-direction: column; justify-content: flex-end; ">
+
+
+              {% if bool == False %}
+              <h5 class="card-title">Create Account</h5>
+              <p class="card-text">
+                  Get started creating a new bank account
+              </p>
+              {% else %}
+              <h5 class="card-title">View Account</h5>
+              <p class="card-text">
+                  View the details of your previously created account
+              </p>
+              {% endif %}
+              {% if bool == False %}
+              <a href="index" class="btn btn-dark">Create Account</a>
+              {% else %}
+              <a href="view" class="btn btn-dark">View Account</a>
+              {% endif %}
+
+
+          </div>
+      </div>
+
+
+
+      <div class="card w-25" id="three" >
+          <div class="" style=" ">
+              <img
+                  src="static/adding.jpg"
+                  class="card-img"
+                  style=" height: 100%"
+
+              />
+
+
+
+          </div>
+          <div class="card-body" style="display: flex; flex-direction: column; justify-content: flex-end; ">
+              {% if bool == False %}
+              <h5 class="card-title">Add/Withdraw</h5>
+              <p class="card-text">
+                  Create an account first
+              </p>
+              {% else %}
+              <h5 class="card-title">Add/Withdraw</h5>
+              <p class="card-text">
+                  Add/Widthdraw money from account
+              </p>
+              {% endif %}
+              {% if bool == False %}
+              <a href="index" class="btn btn-dark disabled" aria-disabled="true">Add/Withdraw</a>
+              {% else %}
+              <a href="money" class="btn btn-dark">Add/Withdraw</a>
+              {% endif %}
+
+
+
+          </div>
+          </div>
+
+
+
+      </div>
+
+
+
+
+<script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+
+
+
+
+
+{% endblock %}

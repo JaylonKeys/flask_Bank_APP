@@ -1,0 +1,174 @@
+{% extends "base.html" %} {% block title %}View Account{% endblock %} {% block content
+%}
+
+  <style>
+
+  * {
+
+
+    margin:0;
+
+
+
+
+
+
+
+}
+    body {
+      min-height: 100vh;
+
+
+    }
+
+    .container{
+      min-height: 100vh;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .item{
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+nav{
+
+
+    height: 10%;
+    flex-basis: 100%;
+    align-self: baseline;
+
+
+}
+
+.four{
+
+
+    min-height: 70%;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    align-self: flex-end;
+
+
+}
+
+#three{
+
+
+    height: 50%;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+
+
+
+
+
+}
+
+#two{
+
+
+    height: 10%;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+
+
+
+
+
+}
+
+.five{
+
+
+    height: 10%;
+    flex-basis: 100%;
+    align-self: flex-end;
+
+
+
+}
+ </style>
+
+
+<div class="item four" style="   display: flex; justify-content: center; flex-wrap: wrap  ">
+          <div style=" flex-basis: 50%; height: 50%;  display: flex; flex-direction: column; justify-content: center; ">
+
+             <div style="display: flex; flex-direction: column;">
+                 <p style="align-self: center;">Current balance:</p>
+                 <h1 style="align-self: center;">${{ balance }}</h1>
+
+
+             </div>
+
+
+          </div>
+          <div style=" flex-basis: 50%; height: 50%; display: flex; flex-direction: column; justify-content: center; ">
+              <p style="align-self: center;">Interest rate:</p>
+              <h1 style="align-self: center;">{{ U_interest }}%</h1>
+
+
+
+          </div>
+
+          <canvas id="myChart" style="flex-basis: 100%;  display: flex; flex-wrap: wrap">
+
+                  <script>
+                      labels = JSON.parse({{ labels | tojson }})
+                      data = JSON.parse({{ data | tojson }})
+                      let myChart = document.getElementById('myChart').getContext('2d');
+                      let massPopChart = new Chart(myChart, {
+                            type:'bar',
+                            data:{
+                                labels: labels,
+                                datasets:[{
+                                    label:'Amount of money in account at the given age ',
+                                    data: data,
+                                }]
+
+                            },
+                            options:{}
+                            });
+
+
+
+                  </script>
+
+
+          </canvas>
+      </div>
+<hr>
+
+
+
+
+</body>
+</html>
+
+      {% endblock %}

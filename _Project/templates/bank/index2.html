@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Create Account{% endblock %} {% block content
+%}
+
+    <form name="data"  class="form-outline" method="POST">
+        <p>Enter Starting Balance</p>
+        <input type="text" name="balance"  value="{{ request.form.balance }}" id="balance"  class="form-control" required>
+        <label class="form-label" ></label>
+
+
+
+        <p>Enter Interest Rate</p>
+        <input type="text" name="interest" id="interest" value="{{ request.form.interest }}" class="form-control" required>
+        <label class="form-label" ></label>
+
+
+        <p>Enter Your Age</p>
+        <input type="text" name="age" id="age" value="{{ request.form.age }}" class="form-control" required>
+        <label class="form-label" ></label>
+        <br>
+        <button type="submit" class="btn btn-primary" value="submit" formmethod="POST">Submit</button>
+
+
+    </form>
+
+
+
+
+<h1>{{ te }}</h1>
+
+{% endblock %}
+

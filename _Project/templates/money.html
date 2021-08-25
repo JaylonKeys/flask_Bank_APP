@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Add/Withdraw{% endblock %} {% block content
+%}
+
+<div class="form-outline" style="" xmlns="http://www.w3.org/1999/html">
+    <form name="data" action="{{ url_for('money') }}" class="form-outline" method="POST">
+        <p>Enter Amount</p>
+        <input type="text" name="add" value="{{ request.form.balance }}" id="add"  class="form-control" required>
+        <label class="form-label" ></label>
+
+
+
+        <select id="OP" name="OP" class="form-select form-select-sm mb-3" action="{{ url_for('money') }}" method="POST " aria-label=".form-select-lg example">
+
+        <option value="add">Add to account</option>
+        <option value="withdraw">Withdraw from account</option>
+
+        </select>
+        <input type="submit" href="home" style="" class="btn btn-primary btn-sm" value="submit" formmethod="POST"></input>
+
+    </form>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
+

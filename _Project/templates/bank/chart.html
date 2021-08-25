@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+
+
+<div class="item four" style="   display: flex; justify-content: center; flex-wrap: wrap  ">
+          <div style=" flex-basis: 50%; height: 50%;  display: flex; flex-direction: column; justify-content: center; ">
+
+             <div style="display: flex; flex-direction: column;">
+                 <p style="align-self: center;">You have a current balance of:</p>
+                 <h1 style="align-self: center;">$12344</h1>
+
+
+             </div>
+
+
+          </div>
+          <div style=" flex-basis: 50%; height: 50%; display: flex; flex-direction: column; justify-content: center; ">
+              <p style="align-self: center;">You have a interest rate of:</p>
+              <h1 style="align-self: center;">0.07%</h1>
+
+
+
+          </div>
+
+          <canvas id="myChart" style="flex-basis: 100%;  display: flex; flex-wrap: wrap">
+
+                  <script>
+                      labels = JSON.parse({{ labels | tojson }})
+                      data = JSON.parse({{ data | tojson }})
+                      let myChart = document.getElementById('myChart').getContext('2d');
+                      let massPopChart = new Chart(myChart, {
+                            type:'bar',
+                            data:{
+                                labels: labels,
+                                datasets:[{
+                                    label:'Amount of money in account at given age',
+                                    data: data,
+                                }]
+
+                            },
+                            options:{}
+                            });
+
+
+
+                  </script>
+
+
+          </canvas>
+      </div>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+{% endblock %}

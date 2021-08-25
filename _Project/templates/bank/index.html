@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Bank{% endblock %} {% block content
+%}
+<div style="height: 100%; width: 100%;">
+    <div class="startAccount" style="position:relative;">
+    <p>What type of account would you like to create</p>
+    <form name="accountSelection" action="/" method="POST">
+    <input type="radio" id="s" name="SavingsAccount" value="SA">
+    <label for="s">Savings Account</label><br>
+    <input type="radio" id="hs" name="SavingsAccount" value="HSA">
+    <label for="s">High Interest Savings Account</label><br>
+    <input type="radio" id="c" name="SavingsAccount" value="CA">
+    <label for="c">Checking Account</label><br>
+    <input type="radio" id="hc" name="SavingsAccount" value="HCA">
+    <label for="c">High Interest Checking Account</label><br>
+
+
+
+    </form>
+    <input type="submit" class="btn btn-primary" value="submit" method="POST">
+</div>
+
+
+
+
+
+
+ {% endblock %}
+</div>
+
